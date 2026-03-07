@@ -2,7 +2,7 @@
 export const projects = [
   {
     id: 1,
-    name: 'OnboardFlow',
+    name: 'Cadence',
     tagline: 'Client onboarding pipelines that close deals',
     description:
       'A full-stack SaaS platform for service businesses to manage their client onboarding from lead capture to project kickoff. Drag-and-drop Kanban board, automated email sequences, branded client portals, and pipeline analytics.',
@@ -31,10 +31,10 @@ export const projects = [
   },
   {
     id: 2,
-    name: 'OnboardFlow Landing',
+    name: 'Cadence Landing',
     tagline: 'High-converting SaaS marketing site',
     description:
-      'A polished marketing site for OnboardFlow featuring scroll-driven animations, an interactive product demo, competitor comparison, tiered pricing, and social proof sections. Built to convert visitors into beta signups.',
+      'A polished marketing site for Cadence featuring scroll-driven animations, an interactive product demo, competitor comparison, tiered pricing, and social proof sections. Built to convert visitors into beta signups.',
     tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     features: [
       'Animated hero with 3D perspective product mockup',
