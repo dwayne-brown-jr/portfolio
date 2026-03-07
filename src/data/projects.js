@@ -25,6 +25,7 @@ export const projects = [
       'Pipeline analytics with conversion funnels and bottleneck alerts',
     ],
     links: { live: 'https://onboard-flow-prod.netlify.app/dashboard', github: '' },
+    screenshot: '/screenshots/onboardflow.png',
     accent: '#ea580c',
     category: 'SaaS Platform',
   },
