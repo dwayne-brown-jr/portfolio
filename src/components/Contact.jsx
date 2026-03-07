@@ -39,7 +39,28 @@ const inputClass =
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
   const onChange = (e) => setForm((s) => ({ ...s, [e.target.name]: e.target.value }))
+
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    setStatus('sending')
+    try {
+      const res = await fetch('https://formspree.io/f/xpqywqky', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setStatus('success')
+        setForm({ name: '', email: '', message: '' })
+      } else {
+        setStatus('error')
+      }
+    } catch {
+      setStatus('error')
+    }
+  }
 
   return (
     <section id="contact" className="py-28 px-6">
@@ -108,31 +129,44 @@ export default function Contact() {
             className="card rounded-xl p-7"
           >
             <h3 className="text-base font-bold dark:text-white text-gray-800 mb-5">Send a message</h3>
-            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-medium dark:text-white/45 text-gray-500 mb-1.5">Name</label>
-                  <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Your name" className={inputClass} />
+            {status === 'success' ? (
+              <div className="py-10 flex flex-col items-center gap-3 text-center">
+                <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-400">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </div>
+                <p className="font-semibold text-white">Message sent!</p>
+                <p className="text-sm text-white/40">I'll get back to you soon.</p>
+                <button onClick={() => setStatus('idle')} className="text-xs text-orange-500 hover:text-orange-400 mt-1">Send another</button>
+              </div>
+            ) : (
+              <form className="space-y-4" onSubmit={onSubmit}>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-medium dark:text-white/45 text-gray-500 mb-1.5">Name</label>
+                    <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Your name" required className={inputClass} />
+                  </div>
+                  <div>
+                    <label className="block text-xs font-medium dark:text-white/45 text-gray-500 mb-1.5">Email</label>
+                    <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@example.com" required className={inputClass} />
+                  </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-medium dark:text-white/45 text-gray-500 mb-1.5">Email</label>
-                  <input type="email" name="email" value={form.email} onChange={onChange} placeholder="you@example.com" className={inputClass} />
+                  <label className="block text-xs font-medium dark:text-white/45 text-gray-500 mb-1.5">Message</label>
+                  <textarea name="message" value={form.message} onChange={onChange} rows={5} placeholder="Tell me about your project..." required className={inputClass + ' resize-none'} />
                 </div>
-              </div>
-              <div>
-                <label className="block text-xs font-medium dark:text-white/45 text-gray-500 mb-1.5">Message</label>
-                <textarea name="message" value={form.message} onChange={onChange} rows={5} placeholder="Tell me about your project..." className={inputClass + ' resize-none'} />
-              </div>
-              <button type="submit" className="btn-primary w-full justify-center py-3">
-                Send message
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
-              </button>
-              <p className="text-xs dark:text-white/20 text-gray-400 text-center">
-                Wire up to Resend or Formspree to activate email sending.
-              </p>
-            </form>
+                <button type="submit" disabled={status === 'sending'} className="btn-primary w-full justify-center py-3 disabled:opacity-60">
+                  {status === 'sending' ? 'Sending…' : 'Send message'}
+                  {status !== 'sending' && (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                  )}
+                </button>
+                {status === 'error' && <p className="text-xs text-red-400 text-center">Something went wrong. Please try again.</p>}
+              </form>
+            )}
           </motion.div>
         </div>
       </div>
