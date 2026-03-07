@@ -38,9 +38,7 @@ export default function Hero() {
             variants={item}
             className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight leading-[0.9] mb-8"
           >
-            <span className="text-gradient">Dwayne</span>
-            <br />
-            <span className="dark:text-white/90 text-gray-900">Leon.</span>
+            <span className="text-gradient">Dwayne </span><span className="dark:text-white/90 text-gray-900">Leon.</span>
           </motion.h1>
 
           {/* Tagline */}
