@@ -48,7 +48,7 @@ export const projects = [
   {
     id: 3,
     name: 'Flourish Finance',
-    tagline: 'AI-powered personal finance for iOS and macOS',
+    tagline: 'AI-powered personal finance for iOS/Mac OS',
     description:
       'A premium personal finance app for Apple platforms. Combines automatic bank syncing via Plaid, AI-powered financial coaching via Claude, and a beautiful design system. Supports budgeting, net worth tracking, debt payoff planning, and household/couple mode.',
     tech: [
