@@ -1,16 +1,17 @@
+// --- Update links.live and links.github with your real URLs ---
 export const projects = [
   {
     id: 1,
     name: 'OnboardFlow',
     tagline: 'Client onboarding pipelines that close deals',
     description:
-      'A full-stack SaaS platform for service businesses to manage their client onboarding from lead capture to project kickoff. Features a drag-and-drop Kanban board, automated email sequences, branded client portals, pipeline analytics, and a visual pipeline builder.',
+      'A full-stack SaaS platform for service businesses to manage their client onboarding from lead capture to project kickoff. Drag-and-drop Kanban board, automated email sequences, branded client portals, and pipeline analytics.',
     tech: [
       'Next.js 16',
       'React 19',
       'TypeScript',
       'Prisma',
-      'LibSQL/Turso',
+      'LibSQL / Turso',
       'NextAuth.js',
       'Tailwind CSS',
       'Recharts',
@@ -23,8 +24,8 @@ export const projects = [
       'Branded client portal with checklist progress and document uploads',
       'Pipeline analytics with conversion funnels and bottleneck alerts',
     ],
-    links: { live: '#', github: '#' },
-    accent: '#6366f1',
+    links: { live: '', github: '' },
+    accent: '#ea580c',
     category: 'SaaS Platform',
   },
   {
@@ -32,7 +33,7 @@ export const projects = [
     name: 'OnboardFlow Landing',
     tagline: 'High-converting SaaS marketing site',
     description:
-      'A polished marketing landing page for OnboardFlow featuring scroll-driven animations, an interactive product demo, competitor comparison, tiered pricing, and social proof sections. Built to convert visitors into beta signups.',
+      'A polished marketing site for OnboardFlow featuring scroll-driven animations, an interactive product demo, competitor comparison, tiered pricing, and social proof sections. Built to convert visitors into beta signups.',
     tech: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     features: [
       'Animated hero with 3D perspective product mockup',
@@ -40,8 +41,8 @@ export const projects = [
       'Tiered pricing cards with Starter / Professional / Business plans',
       'FAQ, testimonials, and trust/social proof sections',
     ],
-    links: { live: '#', github: '#' },
-    accent: '#8b5cf6',
+    links: { live: '', github: '' },
+    accent: '#d97706',
     category: 'Marketing Site',
   },
   {
@@ -49,7 +50,7 @@ export const projects = [
     name: 'Flourish Finance',
     tagline: 'AI-powered personal finance for iOS and macOS',
     description:
-      'A premium personal finance app for Apple platforms combining automatic bank syncing via Plaid, AI-powered financial coaching via Claude, and a beautiful Oura-Ring-inspired design system. Supports budgeting, net worth tracking, debt payoff planning, goal setting, household/couple mode, and receipt scanning.',
+      'A premium personal finance app for Apple platforms. Combines automatic bank syncing via Plaid, AI-powered financial coaching via Claude, and a beautiful design system. Supports budgeting, net worth tracking, debt payoff planning, and household/couple mode.',
     tech: [
       'Swift',
       'SwiftUI',
@@ -65,8 +66,8 @@ export const projects = [
       'Net worth tracking, budgeting, and debt payoff calculator',
       'Household/couple mode with shared goals and consolidated views',
     ],
-    links: { live: '#', github: '#' },
-    accent: '#10b981',
+    links: { live: '', github: '' },
+    accent: '#16a34a',
     category: 'iOS / macOS App',
   },
   {
@@ -74,7 +75,7 @@ export const projects = [
     name: 'Canvas AI',
     tagline: 'AI-powered visual workspace for research and creation',
     description:
-      'A visual canvas application where users create interconnected content nodes — text, images, videos, code, PDFs, web pages — and leverage AI to analyze, generate insights, and create content from the full canvas context. Think Miro meets Claude.',
+      'A visual canvas where users create interconnected content nodes — text, images, videos, code, PDFs, web pages — and use AI to analyze, generate insights, and create content from the full canvas context. Miro meets Claude.',
     tech: [
       'React 18',
       'Vite',
@@ -89,11 +90,11 @@ export const projects = [
     features: [
       'Node-based canvas with 10+ content types and drag-and-drop connections',
       'AI chat sidebar that understands the full canvas context',
-      'Web scraping, YouTube transcript extraction, and PDF parsing built in',
+      'Web scraping, YouTube transcript extraction, and PDF parsing',
       'Auto-layout algorithms (grid, tree, radial) and presentation mode',
     ],
-    links: { live: '#', github: '#' },
-    accent: '#f59e0b',
+    links: { live: '', github: '' },
+    accent: '#7c3aed',
     category: 'AI Tool',
   },
   {
@@ -101,16 +102,16 @@ export const projects = [
     name: 'Samantha — Consultant Portfolio',
     tagline: 'Portfolio site with a built-in visual CMS',
     description:
-      "A designer portfolio website for a business systems consultant, featuring a fully custom in-browser content management system. Admins can edit all text, images, colors, and card layouts directly on the live site without touching code — with live/draft publishing, undo/redo, and Supabase-backed persistence.",
+      'A portfolio website for a business systems consultant with a fully custom in-browser CMS. Admins edit all text, images, colors, and layouts directly on the live site — with live/draft publishing, undo/redo, and Supabase-backed persistence.',
     tech: ['React 19', 'Vite', 'Supabase', 'CSS Animations'],
     features: [
-      'In-browser visual CMS — edit text, images, and colors directly on the live site',
-      'Live/draft content workflow with publish and discard controls',
+      'In-browser visual CMS — edit content directly on the live site',
+      'Live/draft workflow with publish and discard controls',
       'Animated hero with typewriter effect and scroll-triggered counters',
       'Editable card groups, block lists, and section-level content management',
     ],
-    links: { live: '#', github: '#' },
-    accent: '#ec4899',
+    links: { live: '', github: '' },
+    accent: '#0891b2',
     category: 'Portfolio / CMS',
   },
   {
@@ -118,16 +119,16 @@ export const projects = [
     name: 'Photo Portfolio',
     tagline: 'Photography showcase with inline admin editing',
     description:
-      'A responsive photography portfolio with masonry grid layout, category filtering, lightbox viewing, and a full admin editing system. Photographers can add, edit, reorder, and delete photos with drag-and-drop — all powered by Supabase for storage, auth, and data.',
+      'A responsive photography portfolio with masonry grid layout, category filtering, lightbox viewing, and a full admin system. Photographers can add, reorder, and edit photos with drag-and-drop — all powered by Supabase.',
     tech: ['React 19', 'Vite', 'Supabase', 'Framer Motion', 'Sharp'],
     features: [
-      'Responsive masonry photo grid with category filtering and smooth transitions',
+      'Responsive masonry grid with category filtering and smooth transitions',
       'Full-screen lightbox with keyboard navigation',
-      'Admin mode: drag-and-drop reorder, inline metadata editing, image uploads',
+      'Admin mode: drag-and-drop reorder, inline metadata editing, uploads',
       'Editable about page, site content, and categories — all database-backed',
     ],
-    links: { live: '#', github: '#' },
-    accent: '#06b6d4',
+    links: { live: '', github: '' },
+    accent: '#be185d',
     category: 'Photography',
   },
 ]
