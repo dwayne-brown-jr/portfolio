@@ -67,6 +67,7 @@ export const projects = [
       'Household/couple mode with shared goals and consolidated views',
     ],
     links: { live: 'https://flourishfinance.netlify.app', github: '' },
+    screenshot: '/screenshots/flourish.png',
     accent: '#16a34a',
     category: 'iOS / macOS App',
   },

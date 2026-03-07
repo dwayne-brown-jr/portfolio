@@ -10,10 +10,10 @@ function ArrowUpRightIcon() {
   )
 }
 
-function Screenshot({ url, name, accent }) {
+function Screenshot({ url, staticSrc, name, accent }) {
   const [loaded, setLoaded] = useState(false)
   const [errored, setErrored] = useState(false)
-  const screenshotUrl = `https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`
+  const src = staticSrc || `https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`
 
   if (errored) {
     return (
@@ -32,14 +32,14 @@ function Screenshot({ url, name, accent }) {
     <>
       {!loaded && (
         <div
-          className="absolute inset-0 flex items-center justify-center animate-pulse"
+          className="absolute inset-0 flex items-center justify-center"
           style={{ background: `linear-gradient(135deg, ${accent}0d, ${accent}06)` }}
         >
-          <div className="w-6 h-6 rounded-full border-2 border-t-transparent animate-spin" style={{ borderColor: `${accent}40`, borderTopColor: 'transparent' }} />
+          <div className="w-6 h-6 rounded-full border-2 animate-spin" style={{ borderColor: `${accent}40`, borderTopColor: accent }} />
         </div>
       )}
       <img
-        src={screenshotUrl}
+        src={src}
         alt={`${name} screenshot`}
         onLoad={() => setLoaded(true)}
         onError={() => setErrored(true)}
@@ -58,7 +58,7 @@ export default function ProjectCard({ project, index }) {
     >
       {hasLive ? (
         <>
-          <Screenshot url={project.links.live} name={project.name} accent={project.accent} />
+          <Screenshot url={project.links.live} staticSrc={project.screenshot} name={project.name} accent={project.accent} />
           {/* Hover overlay */}
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/img:opacity-100 transition-opacity duration-200"
             style={{ background: 'rgba(0,0,0,0.55)' }}
