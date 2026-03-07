@@ -10,7 +10,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.21, 0.47, 0.32, 0.98] } },
 }
 
-export default function Hero() {
+export default function Hero({ onStartProject }) {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
@@ -53,16 +53,16 @@ export default function Hero() {
           {/* CTAs */}
           <motion.div variants={item} className="flex flex-wrap gap-4">
             <button
-              onClick={() => scrollTo('projects')}
+              onClick={onStartProject}
               className="btn-primary px-7 py-3.5 text-base"
             >
-              See my work
+              Start a project
             </button>
             <button
-              onClick={() => scrollTo('contact')}
+              onClick={() => scrollTo('projects')}
               className="btn-ghost px-7 py-3.5 text-base"
             >
-              Get in touch
+              See my work
             </button>
           </motion.div>
 

@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Contact', href: 'contact' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onStartProject }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [active, setActive] = useState('')
@@ -70,10 +70,10 @@ export default function Navbar() {
 
           <div className="flex items-center gap-2">
             <button
-              onClick={() => go('contact')}
+              onClick={onStartProject}
               className="hidden md:inline-flex btn-primary text-sm py-2 px-4"
             >
-              Hire me
+              Start a project
             </button>
 
             <button
