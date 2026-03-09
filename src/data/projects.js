@@ -42,7 +42,7 @@ export const projects = [
       'Tiered pricing cards with Starter / Professional / Business plans',
       'FAQ, testimonials, and trust/social proof sections',
     ],
-    links: { live: 'https://onboardflow-site.netlify.app', github: '' },
+    links: { live: 'https://getcadence.netlify.app', github: '' },
     accent: '#d97706',
     category: 'Marketing Site',
   },
