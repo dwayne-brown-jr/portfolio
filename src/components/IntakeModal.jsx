@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-const INTAKE_URL = 'https://cadence-app.netlify.app/api/intake/db-smart-apps'
+const INTAKE_URL = 'https://cadence-hq.netlify.app/api/intake/db-smart-apps'
 
 const inputClass =
   'w-full rounded-lg px-4 py-3 text-sm bg-white/[0.04] border border-white/[0.07] text-white placeholder-white/25 focus:outline-none focus:ring-2 focus:ring-orange-500/30 transition-all'
