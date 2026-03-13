@@ -24,7 +24,7 @@ export const projects = [
       'Branded client portal with checklist progress and document uploads',
       'Pipeline analytics with conversion funnels and bottleneck alerts',
     ],
-    links: { live: 'https://cadence-app.netlify.app/dashboard', github: '' },
+    links: { live: 'https://cadence-hq.netlify.app/demo', github: '' },
     screenshot: '/screenshots/onboardflow.png',
     accent: '#ea580c',
     category: 'SaaS Platform',
