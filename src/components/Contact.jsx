@@ -81,6 +81,17 @@ export default function Contact() {
                 </svg>
                 LinkedIn
               </a>
+              <a
+                href="https://github.com/dwayne-brown-jr"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 text-sm text-ink-secondary hover:text-accent transition-colors w-fit"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2A10 10 0 0 0 8.84 21.5c.5.08.66-.23.66-.5v-1.69C6.73 19.91 6.14 18 6.14 18a2.69 2.69 0 0 0-1.13-1.49c-.92-.63.07-.62.07-.62a2.13 2.13 0 0 1 1.56 1.05 2.16 2.16 0 0 0 2.95.85 2.16 2.16 0 0 1 .64-1.35c-2.2-.25-4.52-1.1-4.52-4.9a3.83 3.83 0 0 1 1.02-2.66 3.56 3.56 0 0 1 .1-2.62s.84-.27 2.75 1.02a9.42 9.42 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02a3.56 3.56 0 0 1 .1 2.62 3.83 3.83 0 0 1 1.02 2.66c0 3.81-2.32 4.65-4.53 4.89a2.42 2.42 0 0 1 .69 1.88v2.79c0 .27.16.59.67.5A10 10 0 0 0 12 2z" />
+                </svg>
+                GitHub
+              </a>
             </motion.div>
           </motion.div>
 
