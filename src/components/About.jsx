@@ -31,10 +31,9 @@ export default function About() {
               backend, AI integration, and deployment. No handoffs, no gaps.
             </motion.p>
             <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed">
-              That ranges from SaaS platforms in Next.js and native Apple apps in SwiftUI
-              to a regime-adaptive trading system in Python. I&apos;ve been building with the
-              Claude and OpenAI APIs since they launched — as a real layer of product
-              intelligence, not a novelty.
+              That ranges from SaaS platforms in Next.js to native Apple apps in SwiftUI.
+              I&apos;ve been building with the Claude and OpenAI APIs since they launched —
+              as a real layer of product intelligence, not a novelty.
             </motion.p>
           </motion.div>
 

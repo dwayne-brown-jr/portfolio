@@ -27,62 +27,17 @@ export const projects = [
   },
   {
     id: 3,
-    name: 'Vantage',
-    tagline: 'Portfolio tracker, planner & AI strategist',
-    description:
-      'A local-first investment portfolio tracker with target-allocation planning, an RSU diversification planner, and brokerage CSV import. All math lives in a pure, unit-tested analytics layer — the Claude-powered strategist narrates over computed figures and never does the arithmetic.',
-    tech: ['Next.js 16', 'React 19', 'TypeScript', 'Anthropic API', 'SQLite', 'Vitest'],
-    links: { live: '', github: '' },
-    accent: '#0e7490',
-    category: 'AI / Fintech',
-  },
-  {
-    id: 4,
-    name: 'Pipeline',
-    tagline: 'Job discovery with AI fit-scoring',
-    description:
-      'A personal job-search engine that pulls listings from multiple sources on a cron, hard-filters them deterministically at zero token cost, then scores each survivor against a master profile with Claude — explaining the fit and drafting tailored resume bullets on demand.',
-    tech: ['Next.js', 'TypeScript', 'Prisma', 'Turso', 'Anthropic API', 'Vercel Cron'],
-    links: { live: '', github: '' },
-    accent: '#2563eb',
-    category: 'AI Tool',
-  },
-  {
-    id: 5,
-    name: 'Regime Trader',
-    tagline: 'Regime-adaptive algorithmic trading',
-    description:
-      'An algorithmic trading system that classifies the market into seven regimes with a Gaussian Hidden Markov Model and adapts allocation to each. A risk layer with three-level circuit breakers and a kill switch holds absolute veto over every trade; strategies are validated with walk-forward backtesting.',
-    tech: ['Python', 'hmmlearn', 'scikit-learn', 'Alpaca API', 'Streamlit', 'Docker'],
-    links: { live: '', github: '' },
-    accent: '#6d28d9',
-    category: 'Quant / ML',
-  },
-  {
-    id: 6,
     name: 'Switchboard',
     tagline: 'AI front desk for local service businesses',
     description:
       'Marketing and lead-capture site for Switchboard, a done-for-you AI front desk for appointment-based businesses. An animated live dispatch board, missed-revenue ROI calculator, and one job: convert visitors into free missed-call audit requests.',
     tech: ['Astro 5', 'TypeScript', 'Tailwind CSS 4', 'Resend', 'Netlify'],
-    links: { live: 'https://switchboard-frontdesk.netlify.app', github: '' },
+    links: { live: 'https://getswitchboardhq.com', github: '' },
     accent: '#b45309',
     category: 'Marketing Site',
   },
   {
-    id: 7,
-    name: 'Canvas AI',
-    tagline: 'AI-powered visual workspace for research',
-    description:
-      'A visual canvas where users create interconnected content nodes — text, images, video, code, PDFs, web pages — and use AI to analyze and generate from the full canvas context. Miro meets Claude.',
-    tech: ['React 18', 'ReactFlow', 'Express', 'Claude API', 'Supabase'],
-    links: { live: 'https://canvas-ai-workspace.netlify.app', github: '' },
-    screenshot: '/screenshots/canvas-ai.png',
-    accent: '#7c3aed',
-    category: 'AI Tool',
-  },
-  {
-    id: 8,
+    id: 4,
     name: 'Cadence Landing',
     tagline: 'High-converting SaaS marketing site',
     description:
@@ -93,7 +48,7 @@ export const projects = [
     category: 'Marketing Site',
   },
   {
-    id: 9,
+    id: 5,
     name: 'Samantha — Consultant Portfolio',
     tagline: 'Portfolio site with a built-in visual CMS',
     description:
@@ -104,7 +59,7 @@ export const projects = [
     category: 'Portfolio / CMS',
   },
   {
-    id: 10,
+    id: 6,
     name: 'Photo Portfolio',
     tagline: 'Photography showcase with inline admin editing',
     description:
@@ -120,7 +75,7 @@ export const projects = [
 export const skills = [
   { category: 'Frontend', items: 'React, Next.js, TypeScript, Swift / SwiftUI, Tailwind CSS, Astro, Framer Motion' },
   { category: 'Backend', items: 'Node.js, Python, Prisma, Express, Firebase, Supabase' },
-  { category: 'AI & ML', items: 'Claude API, OpenAI, hmmlearn, scikit-learn, Streamlit' },
-  { category: 'Data', items: 'PostgreSQL, SQLite, Turso, Firestore, Plaid API' },
-  { category: 'Infra', items: 'Netlify, Vercel, Docker, Fly.io, Vite, Vitest, Xcode' },
+  { category: 'AI & APIs', items: 'Claude API, OpenAI, Plaid API, Resend' },
+  { category: 'Data', items: 'PostgreSQL, SQLite, Turso, Firestore' },
+  { category: 'Infra', items: 'Netlify, Vercel, Docker, Vite, Vitest, Xcode' },
 ]
