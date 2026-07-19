@@ -13,8 +13,8 @@ export default function Footer() {
         <div className="flex items-center gap-6">
           {[
             { label: 'GitHub', href: 'https://github.com/DB28319496' },
-            { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
-            { label: 'Email', href: 'mailto:hello@youremail.com' },
+            { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dwaynebrown8/' },
+            { label: 'Email', href: 'mailto:dwaynebrown2012@gmail.com' },
           ].map((link) => (
             <a
               key={link.label}
