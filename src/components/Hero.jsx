@@ -2,103 +2,54 @@ import { motion } from 'framer-motion'
 
 const container = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } },
+  show: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
 }
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.21, 0.47, 0.32, 0.98] } },
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] } },
 }
 
 export default function Hero({ onStartProject }) {
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section className="relative min-h-screen flex flex-col justify-center px-6 overflow-hidden">
-      {/* Warm glow — subtle, not animated blobs */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] pointer-events-none"
-        style={{
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(234,88,12,0.12) 0%, transparent 70%)',
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto w-full relative z-10 pt-32 pb-24">
-        <motion.div variants={container} initial="hidden" animate="show">
-          {/* Eyebrow */}
-          <motion.p
-            variants={item}
-            className="text-sm font-medium text-orange-500 mb-6 tracking-wide"
-          >
-            Full-stack developer & designer
+    <section className="px-6 pt-36 pb-20 sm:pt-44 sm:pb-24">
+      <div className="max-w-site mx-auto">
+        <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
+          <motion.p variants={item} className="eyebrow mb-6">
+            Dwayne Leon — Full-Stack Developer
           </motion.p>
 
-          {/* Name / headline */}
           <motion.h1
             variants={item}
-            className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black tracking-tight leading-[0.9] mb-8"
+            className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.02] mb-7"
           >
-            <span className="text-gradient">Dwayne </span><span className="dark:text-white/90 text-gray-900">Leon.</span>
+            Software that <span className="text-accent">feels</span> as good
+            as it works.
           </motion.h1>
 
-          {/* Tagline */}
           <motion.p
             variants={item}
-            className="text-xl sm:text-2xl dark:text-white/55 text-gray-500 max-w-xl leading-relaxed mb-12 font-normal"
+            className="text-lg sm:text-xl text-ink-secondary max-w-xl leading-relaxed mb-10"
           >
-            I build software that feels as good as it works — from pixel-perfect UIs to
-            production backends and AI-integrated products.
+            Ten shipped products across SaaS, iOS, AI tools, and algorithmic
+            trading — built end-to-end in React, Next.js, SwiftUI, and Python.
           </motion.p>
 
-          {/* CTAs */}
-          <motion.div variants={item} className="flex flex-wrap gap-4">
-            <button
-              onClick={onStartProject}
-              className="btn-primary px-7 py-3.5 text-base"
-            >
+          <motion.div variants={item} className="flex flex-wrap items-center gap-3">
+            <button onClick={() => scrollTo('projects')} className="btn-primary px-7 py-3.5">
+              See the work
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19" /><polyline points="19 12 12 19 5 12" />
+              </svg>
+            </button>
+            <button onClick={onStartProject} className="btn-ghost px-7 py-3.5">
               Start a project
             </button>
-            <button
-              onClick={() => scrollTo('projects')}
-              className="btn-ghost px-7 py-3.5 text-base"
-            >
-              See my work
-            </button>
-          </motion.div>
-
-          {/* Horizontal rule with stats */}
-          <motion.div
-            variants={item}
-            className="mt-20 pt-10 border-t dark:border-white/[0.06] border-gray-200 grid grid-cols-3 gap-8 max-w-lg"
-          >
-            {[
-              { n: '6+', label: 'Products shipped' },
-              { n: '5+', label: 'Years building' },
-              { n: 'Full', label: 'Stack coverage' },
-            ].map((s) => (
-              <div key={s.label}>
-                <div className="text-2xl font-black text-orange-500 mb-1">{s.n}</div>
-                <div className="text-xs dark:text-white/35 text-gray-400 font-medium">{s.label}</div>
-              </div>
-            ))}
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-10 left-6 md:left-1/2 md:-translate-x-1/2 flex items-center gap-2 dark:text-white/20 text-gray-300"
-      >
-        <motion.div
-          animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="w-px h-12 dark:bg-white/15 bg-gray-300 mx-auto"
-          style={{ display: 'block' }}
-        />
-      </motion.div>
     </section>
   )
 }

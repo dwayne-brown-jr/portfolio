@@ -1,34 +1,19 @@
-import { motion } from 'framer-motion'
-
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t dark:border-white/[0.05] border-gray-200 px-6 py-8">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex items-center gap-3"
-        >
-          <span className="text-sm font-black text-orange-500">DL</span>
-          <span className="dark:text-white/15 text-gray-300">·</span>
-          <span className="dark:text-white/30 text-gray-400 text-sm">
-            &copy; {year} Dwayne Leon
-          </span>
-        </motion.div>
+    <footer className="border-t border-line px-6 py-8">
+      <div className="max-w-site mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-3">
+          <span className="font-display text-sm font-bold">Dwayne Leon</span>
+          <span className="text-line-strong">·</span>
+          <span className="text-ink-muted text-sm">&copy; {year}</span>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="flex items-center gap-6"
-        >
+        <div className="flex items-center gap-6">
           {[
-            { label: 'GitHub', href: 'https://github.com/yourusername' },
+            { label: 'GitHub', href: 'https://github.com/DB28319496' },
             { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
-            { label: 'X', href: 'https://x.com/yourusername' },
             { label: 'Email', href: 'mailto:hello@youremail.com' },
           ].map((link) => (
             <a
@@ -36,12 +21,12 @@ export default function Footer() {
               href={link.href}
               target={link.href.startsWith('http') ? '_blank' : undefined}
               rel="noreferrer"
-              className="text-sm dark:text-white/30 text-gray-400 hover:text-orange-500 dark:hover:text-orange-400 transition-colors"
+              className="text-sm text-ink-muted hover:text-accent transition-colors"
             >
               {link.label}
             </a>
           ))}
-        </motion.div>
+        </div>
       </div>
     </footer>
   )

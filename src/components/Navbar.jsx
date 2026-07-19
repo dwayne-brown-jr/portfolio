@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
+  { label: 'Work', href: 'projects' },
   { label: 'About', href: 'about' },
-  { label: 'Projects', href: 'projects' },
-  { label: 'Skills', href: 'skills' },
   { label: 'Contact', href: 'contact' },
 ]
 
@@ -40,16 +39,16 @@ export default function Navbar({ onStartProject }) {
         transition={{ duration: 0.5 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'dark:bg-[#0a0806]/90 bg-white/90 backdrop-blur-xl border-b dark:border-white/[0.05] border-gray-200 shadow-sm'
+            ? 'bg-paper/90 backdrop-blur-xl border-b border-line'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div className="max-w-site mx-auto px-6 h-16 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-sm font-black tracking-tight text-orange-500 hover:text-orange-400 transition-colors"
+            className="font-display font-bold text-base tracking-tight hover:text-accent transition-colors"
           >
-            DL
+            Dwayne Leon
           </button>
 
           <div className="hidden md:flex items-center gap-1">
@@ -57,10 +56,10 @@ export default function Navbar({ onStartProject }) {
               <button
                 key={href}
                 onClick={() => go(href)}
-                className={`px-4 py-2 rounded-lg text-sm transition-all duration-150 ${
+                className={`px-4 py-2 rounded-full text-sm transition-all duration-150 ${
                   active === href
-                    ? 'dark:text-white text-gray-900 font-medium dark:bg-white/[0.06] bg-gray-100'
-                    : 'dark:text-white/50 text-gray-400 hover:dark:text-white hover:text-gray-900'
+                    ? 'text-ink font-medium bg-line/60'
+                    : 'text-ink-secondary hover:text-ink'
                 }`}
               >
                 {label}
@@ -71,13 +70,13 @@ export default function Navbar({ onStartProject }) {
           <div className="flex items-center gap-2">
             <button
               onClick={onStartProject}
-              className="hidden md:inline-flex btn-primary text-sm py-2 px-4"
+              className="hidden md:inline-flex btn-primary text-sm py-2 px-5"
             >
               Start a project
             </button>
 
             <button
-              className="md:hidden w-9 h-9 rounded-lg flex items-center justify-center dark:text-white/50 text-gray-500 dark:hover:bg-white/[0.05] hover:bg-gray-100 transition-all"
+              className="md:hidden w-9 h-9 rounded-full flex items-center justify-center text-ink-secondary hover:bg-line/50 transition-all"
               onClick={() => setMobileOpen((o) => !o)}
             >
               {mobileOpen ? (
@@ -101,7 +100,7 @@ export default function Navbar({ onStartProject }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="fixed top-16 inset-x-0 z-40 dark:bg-[#100d09]/96 bg-white/96 backdrop-blur-xl border-b dark:border-white/[0.05] border-gray-200"
+            className="fixed top-16 inset-x-0 z-40 bg-paper/95 backdrop-blur-xl border-b border-line"
           >
             <div className="px-6 py-3 flex flex-col gap-1">
               {navLinks.map(({ label, href }, i) => (
@@ -111,14 +110,17 @@ export default function Navbar({ onStartProject }) {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04 }}
                   onClick={() => go(href)}
-                  className="text-left px-4 py-3 rounded-lg dark:text-white/75 text-gray-700 hover:dark:bg-white/[0.05] hover:bg-gray-100 text-sm font-medium transition-all"
+                  className="text-left px-4 py-3 rounded-lg text-ink-secondary hover:bg-line/50 hover:text-ink text-sm font-medium transition-all"
                 >
                   {label}
                 </motion.button>
               ))}
-              <div className="pt-2 pb-1 border-t dark:border-white/[0.05] border-gray-200 mt-1">
-                <button onClick={() => go('contact')} className="w-full btn-primary justify-center text-sm mt-2">
-                  Hire me
+              <div className="pt-2 pb-2 border-t border-line mt-1">
+                <button
+                  onClick={() => { setMobileOpen(false); onStartProject() }}
+                  className="w-full btn-primary justify-center text-sm py-3 mt-2"
+                >
+                  Start a project
                 </button>
               </div>
             </div>
