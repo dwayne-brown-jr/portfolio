@@ -33,8 +33,9 @@ export default function Hero({ onStartProject }) {
             variants={item}
             className="text-lg sm:text-xl text-ink-secondary max-w-xl leading-relaxed mb-10"
           >
-            Shipped products across SaaS, iOS, and AI-powered tools — built
-            end-to-end in React, Next.js, and SwiftUI.
+            8+ years making complex technology make sense to customers —
+            backed by SaaS, iOS, and AI products I designed, built, and
+            shipped myself.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-wrap items-center gap-3">

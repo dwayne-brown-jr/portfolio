@@ -24,16 +24,19 @@ export default function About() {
               variants={fadeUp}
               className="font-display text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-7"
             >
-              End-to-end, every time.
+              Build it. Then explain it.
             </motion.h2>
             <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed mb-4">
-              I build production-grade software across the full stack — design, frontend,
-              backend, AI integration, and deployment. No handoffs, no gaps.
+              I&apos;ve spent 8+ years as the person customers reach when the technology
+              gets complicated — SaaS onboarding and implementation at Ezoic, technical
+              escalations and service leadership at Tesla. Solving the problem is half
+              the job; making the answer land is the other half.
             </motion.p>
             <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed">
-              That ranges from SaaS platforms in Next.js to native Apple apps in SwiftUI.
-              I&apos;ve been building with the Claude and OpenAI APIs since they launched —
-              as a real layer of product intelligence, not a novelty.
+              I also build the software. Production-grade SaaS platforms in Next.js,
+              native Apple apps in SwiftUI, and real AI integration with the Claude and
+              OpenAI APIs. That&apos;s why a demo doesn&apos;t have to stay at the
+              surface — I can go as deep as the question does.
             </motion.p>
           </motion.div>
 
