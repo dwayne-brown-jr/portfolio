@@ -3,6 +3,17 @@
 export const projects = [
   {
     id: 1,
+    name: 'Switchboard',
+    tagline: 'AI front desk for local service businesses',
+    description:
+      'Marketing and lead-capture site for Switchboard, a done-for-you AI front desk for appointment-based businesses. An animated live dispatch board, missed-revenue ROI calculator, and one job: convert visitors into free missed-call audit requests.',
+    tech: ['Astro 5', 'TypeScript', 'Tailwind CSS 4', 'Resend', 'Netlify'],
+    links: { live: 'https://getswitchboardhq.com', github: '' },
+    accent: '#b45309',
+    category: 'Marketing Site',
+  },
+  {
+    id: 2,
     name: 'Cadence',
     tagline: 'Client onboarding pipelines that close deals',
     description:
@@ -14,7 +25,7 @@ export const projects = [
     category: 'SaaS Platform',
   },
   {
-    id: 2,
+    id: 3,
     name: 'Flourish Finance',
     tagline: 'AI-powered personal finance for iOS & macOS',
     description:
@@ -24,17 +35,6 @@ export const projects = [
     screenshot: '/screenshots/flourish.png',
     accent: '#16a34a',
     category: 'iOS / macOS App',
-  },
-  {
-    id: 3,
-    name: 'Switchboard',
-    tagline: 'AI front desk for local service businesses',
-    description:
-      'Marketing and lead-capture site for Switchboard, a done-for-you AI front desk for appointment-based businesses. An animated live dispatch board, missed-revenue ROI calculator, and one job: convert visitors into free missed-call audit requests.',
-    tech: ['Astro 5', 'TypeScript', 'Tailwind CSS 4', 'Resend', 'Netlify'],
-    links: { live: 'https://getswitchboardhq.com', github: '' },
-    accent: '#b45309',
-    category: 'Marketing Site',
   },
   {
     id: 4,
