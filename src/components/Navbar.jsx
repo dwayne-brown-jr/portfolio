@@ -48,7 +48,7 @@ export default function Navbar({ onStartProject }) {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="font-display font-bold text-base tracking-tight hover:text-accent transition-colors"
           >
-            Dwayne Leon
+            Dwayne Brown, Jr.
           </button>
 
           <div className="hidden md:flex items-center gap-1">

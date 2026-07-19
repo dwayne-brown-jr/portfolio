@@ -153,7 +153,7 @@ export default function IntakeModal({ open, onClose }) {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="col-span-2 sm:col-span-1">
                         <label className="block text-xs font-medium text-ink-secondary mb-1.5">Name <span className="text-accent">*</span></label>
-                        <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Dwayne Leon" required className={inputClass} />
+                        <input type="text" name="name" value={form.name} onChange={onChange} placeholder="Your name" required className={inputClass} />
                       </div>
                       <div className="col-span-2 sm:col-span-1">
                         <label className="block text-xs font-medium text-ink-secondary mb-1.5">Email <span className="text-accent">*</span></label>
