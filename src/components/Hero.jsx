@@ -18,7 +18,7 @@ export default function Hero({ onStartProject }) {
       <div className="max-w-site mx-auto">
         <motion.div variants={container} initial="hidden" animate="show" className="max-w-3xl">
           <motion.p variants={item} className="eyebrow mb-6">
-            Dwayne Leon — Full-Stack Developer
+            Dwayne Leon — Solutions Engineer &amp; Technical Account Manager
           </motion.p>
 
           <motion.h1
