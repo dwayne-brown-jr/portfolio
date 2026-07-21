@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Logo from './Logo'
 
 const navLinks = [
   { label: 'Work', href: 'projects' },
@@ -46,8 +47,9 @@ export default function Navbar({ onStartProject }) {
         <div className="max-w-site mx-auto px-6 h-16 flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-display font-bold text-base tracking-tight hover:text-accent transition-colors"
+            className="group flex items-center gap-2.5 font-display font-bold text-base tracking-tight hover:text-accent transition-colors"
           >
+            <Logo size={26} className="rounded-[6px] transition-transform duration-200 group-hover:-rotate-3" />
             Dwayne Brown, Jr.
           </button>
 
