@@ -77,9 +77,11 @@ export default function ProjectCard({ project, index = 0, flagship = false }) {
     <Cover project={project} />
   )
 
+  // overflow-hidden clips pseudo-elements, so the glow lives on a wrapper and
+  // the lift moves with it (see .glow-ring in index.css).
   const frameClass =
-    'relative w-full overflow-hidden rounded-xl border border-line bg-paper-raised transition-all duration-300 ' +
-    'group-hover:shadow-[0_12px_40px_-12px_rgba(25,23,20,0.18)] group-hover:-translate-y-1 group-hover:border-line-strong'
+    'relative w-full overflow-hidden rounded-xl border border-line bg-paper-raised transition-colors duration-300 ' +
+    'group-hover:border-line-strong'
 
   const body = (
     <>
@@ -108,7 +110,7 @@ export default function ProjectCard({ project, index = 0, flagship = false }) {
   )
 
   const card = flagship ? (
-    <div className="grid lg:grid-cols-5 gap-6 lg:gap-10 items-center rounded-2xl border border-line bg-paper-raised p-5 sm:p-7 transition-all duration-300 group-hover:shadow-[0_16px_50px_-14px_rgba(25,23,20,0.2)] group-hover:border-line-strong">
+    <div className="glow-ring grid lg:grid-cols-5 gap-6 lg:gap-10 items-center rounded-2xl border border-line bg-paper-raised p-5 sm:p-7 transition-colors duration-300 group-hover:border-line-strong">
       <div className="lg:col-span-3">
         <div className="relative w-full aspect-[16/10] overflow-hidden rounded-xl border border-line">
           {imageInner}
@@ -135,7 +137,9 @@ export default function ProjectCard({ project, index = 0, flagship = false }) {
     </div>
   ) : (
     <div>
-      <div className={`${frameClass} aspect-[16/10]`}>{imageInner}</div>
+      <div className="glow-ring rounded-xl transition-transform duration-300 group-hover:-translate-y-1">
+        <div className={`${frameClass} aspect-[16/10]`}>{imageInner}</div>
+      </div>
       {body}
     </div>
   )
@@ -147,6 +151,7 @@ export default function ProjectCard({ project, index = 0, flagship = false }) {
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, delay: (index % 2) * 0.08, ease: [0.21, 0.47, 0.32, 0.98] }}
       className="group"
+      style={{ '--glow-color': project.accent }}
     >
       {hasLive ? (
         <a href={project.links.live} target="_blank" rel="noreferrer" className="block">

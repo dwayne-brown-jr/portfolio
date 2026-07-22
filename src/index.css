@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animatable angle for the hover glow's conic gradient. */
+@property --glow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -75,5 +82,98 @@
 
   .hairline {
     border-color: #e8e4de;
+  }
+
+  /* Multi-colour hover ring + glow.
+     --glow-color is set per card from the project's own accent, then blended
+     toward the site accent (warm) and a cool counterpart so every card sweeps
+     through its own palette instead of a generic rainbow. */
+  .glow-ring {
+    position: relative;
+    --g1: var(--glow-color, #e04e10);
+    /* Fallback: blend toward the site accent and a cool anchor. */
+    --g2: color-mix(in oklch, var(--g1) 55%, #e04e10);
+    --g3: color-mix(in oklch, var(--g1) 55%, #0891b2);
+    --glow-gradient: conic-gradient(
+      from var(--glow-angle),
+      var(--g1),
+      var(--g2),
+      var(--g3),
+      var(--g2),
+      var(--g1)
+    );
+  }
+
+  /* Preferred: rotate hue around the card's own accent, so the sweep is always
+     multi-hue and stays in that project's colour family — a fixed cool anchor
+     collapses to one colour for teal-accented cards. */
+  @supports (color: oklch(from red l c h)) {
+    .glow-ring {
+      --g2: oklch(from var(--g1) calc(l + 0.04) c calc(h + 58));
+      --g3: oklch(from var(--g1) calc(l + 0.08) c calc(h - 66));
+    }
+  }
+
+  .glow-ring::before,
+  .glow-ring::after {
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    background: var(--glow-gradient);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 320ms ease;
+  }
+
+  /* Crisp ring — masked so only the border band paints, never the card face. */
+  .glow-ring::before {
+    inset: -1.5px;
+    padding: 1.5px;
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+
+  /* Soft halo, painted behind the card. */
+  .glow-ring::after {
+    inset: -5px;
+    z-index: -1;
+    filter: blur(16px);
+  }
+
+  .group:hover .glow-ring::before,
+  .group:focus-visible .glow-ring::before,
+  .group:focus-within .glow-ring::before {
+    opacity: 1;
+    animation: glow-spin 6s linear infinite;
+  }
+
+  .group:hover .glow-ring::after,
+  .group:focus-visible .glow-ring::after,
+  .group:focus-within .glow-ring::after {
+    opacity: 0.45;
+    animation: glow-spin 6s linear infinite;
+  }
+
+  @keyframes glow-spin {
+    to {
+      --glow-angle: 360deg;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .group:hover .glow-ring::before,
+    .group:focus-visible .glow-ring::before,
+    .group:focus-within .glow-ring::before,
+    .group:hover .glow-ring::after,
+    .group:focus-visible .glow-ring::after,
+    .group:focus-within .glow-ring::after {
+      animation: none;
+    }
   }
 }
