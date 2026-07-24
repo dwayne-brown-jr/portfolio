@@ -1,3 +1,5 @@
+import { handoff } from '../data/projects'
+
 export default function Footer() {
   const year = new Date().getFullYear()
 
@@ -7,11 +9,15 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <span className="font-display text-sm font-bold">Dwayne Brown, Jr.</span>
           <span className="text-line-strong">·</span>
+          <span className="text-ink-muted text-sm">Founder, {handoff.name}</span>
+          <span className="text-line-strong">·</span>
           <span className="text-ink-muted text-sm">&copy; {year}</span>
         </div>
 
         <div className="flex items-center gap-6">
           {[
+            // Handoff joins the link row automatically once its URL is set.
+            ...(handoff.url ? [{ label: handoff.name, href: handoff.url }] : []),
             { label: 'GitHub', href: 'https://github.com/dwayne-brown-jr' },
             { label: 'LinkedIn', href: 'https://www.linkedin.com/in/dwaynebrown8/' },
             { label: 'Email', href: 'mailto:dwaynebrown2012@gmail.com' },

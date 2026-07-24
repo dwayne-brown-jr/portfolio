@@ -32,11 +32,17 @@ export default function About() {
               escalations and service leadership at Tesla. Solving the problem is half
               the job; making the answer land is the other half.
             </motion.p>
-            <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed">
+            <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed mb-4">
               I also build the software. Production-grade SaaS platforms in Next.js,
               native Apple apps in SwiftUI, and real AI integration with the Claude and
               OpenAI APIs. That&apos;s why a demo doesn&apos;t have to stay at the
               surface — I can go as deep as the question does.
+            </motion.p>
+            <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed">
+              That builder&apos;s side has a name: <strong className="text-ink font-semibold">Handoff</strong>,
+              my AI implementation practice — I help business owners hand off the work
+              that shouldn&apos;t need them, with Switchboard, a 24/7 AI receptionist
+              for service businesses, as its flagship product.
             </motion.p>
           </motion.div>
 

@@ -72,6 +72,15 @@ export const projects = [
   },
 ]
 
+// The parent brand for the consulting/building practice. The portfolio serves
+// recruiters; Handoff serves business owners — two doors, one person.
+// Set `url` once the Handoff domain is bought; links render only when it's set.
+export const handoff = {
+  name: 'Handoff',
+  tagline: 'The work that shouldn’t need you.',
+  url: '', // e.g. 'https://handoff.example' — leave empty until the domain exists
+}
+
 export const skills = [
   { category: 'Frontend', items: 'React, Next.js, TypeScript, Swift / SwiftUI, Tailwind CSS, Astro, Framer Motion' },
   { category: 'Backend', items: 'Node.js, Python, Prisma, Express, Firebase, Supabase' },
