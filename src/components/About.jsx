@@ -33,10 +33,11 @@ export default function About() {
               the job; making the answer land is the other half.
             </motion.p>
             <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed mb-4">
-              I also build the software. Production-grade SaaS platforms in Next.js,
-              native Apple apps in SwiftUI, and real AI integration with the Claude and
-              OpenAI APIs. That&apos;s why a demo doesn&apos;t have to stay at the
-              surface — I can go as deep as the question does.
+              I also build the software — and take that work on for clients. Marketing
+              sites and portfolios, production-grade SaaS platforms in Next.js, native
+              Apple apps in SwiftUI, and real AI integration with the Claude and OpenAI
+              APIs — designed, built, and shipped end-to-end. It&apos;s also why a demo
+              doesn&apos;t have to stay at the surface: I can go as deep as the question does.
             </motion.p>
             <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed">
               That builder&apos;s side has a name: <strong className="text-ink font-semibold">Handoff</strong>,

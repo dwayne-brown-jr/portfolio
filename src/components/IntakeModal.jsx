@@ -122,7 +122,7 @@ export default function IntakeModal({ open, onClose }) {
                 <div>
                   <div className="h-[3px] w-8 rounded-full bg-accent mb-3" />
                   <h2 className="font-display text-xl font-bold text-ink">Start a project</h2>
-                  <p className="text-sm text-ink-secondary mt-1">Tell me what you're building and I'll be in touch.</p>
+                  <p className="text-sm text-ink-secondary mt-1">Website, web app, iOS, or AI build — tell me what you have in mind and I'll be in touch.</p>
                 </div>
                 <button
                   onClick={handleClose}
