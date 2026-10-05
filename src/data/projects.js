@@ -2,18 +2,6 @@
 // Projects without a live link get the "Private build" cover treatment.
 export const projects = [
   {
-    id: 1,
-    name: 'Switchboard',
-    tagline: 'AI front desk for local service businesses',
-    description:
-      'The flagship product from Handoff — a done-for-you front desk that answers every call and books the job around the clock, so owners stop losing work to missed calls. This marketing and lead-capture site pairs an animated live dispatch board and missed-revenue ROI calculator with one job: convert visitors into free missed-call audit requests.',
-    tech: ['Astro 5', 'TypeScript', 'Tailwind CSS 4', 'Resend', 'Netlify'],
-    links: { live: 'https://getswitchboardhq.com', github: '' },
-    screenshot: '/screenshots/switchboard.png',
-    accent: '#b45309',
-    category: 'Marketing Site',
-  },
-  {
     id: 11,
     name: 'Blueprint',
     tagline: 'A six-stage method for building with AI',
@@ -24,6 +12,18 @@ export const projects = [
     screenshot: '/screenshots/blueprint.png',
     accent: '#2F5BFF',
     category: 'Digital Product',
+  },
+  {
+    id: 1,
+    name: 'Switchboard',
+    tagline: 'AI front desk for local service businesses',
+    description:
+      'The flagship product from Handoff — a done-for-you front desk that answers every call and books the job around the clock, so owners stop losing work to missed calls. This marketing and lead-capture site pairs an animated live dispatch board and missed-revenue ROI calculator with one job: convert visitors into free missed-call audit requests.',
+    tech: ['Astro 5', 'TypeScript', 'Tailwind CSS 4', 'Resend', 'Netlify'],
+    links: { live: 'https://getswitchboardhq.com', github: '' },
+    screenshot: '/screenshots/switchboard.png',
+    accent: '#b45309',
+    category: 'Marketing Site',
   },
   {
     id: 2,
