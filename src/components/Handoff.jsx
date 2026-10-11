@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion'
 
 const HANDOFF_URL = 'https://handoff-report.netlify.app/'
+const SWITCHBOARD_URL = 'https://getswitchboardhq.com'
+const BLUEPRINT_URL = 'https://blueprintkit.dev'
+
+const productLink =
+  'text-paper font-medium underline decoration-paper/30 underline-offset-[3px] transition-colors hover:decoration-accent'
 
 function ArrowUpRight({ size = 14 }) {
   return (
@@ -45,8 +50,18 @@ export default function Handoff({ onStartProject }) {
                 I help owners and small teams put the right tools in place and dial them
                 in, so the repetitive work runs itself — and you get your time back for
                 what actually matters, whether that&apos;s the business or yourself.
-                Switchboard, which answers every call and books the job around the clock,
-                is its flagship.
+              </motion.p>
+              <motion.p variants={fadeUp} className="text-paper/70 leading-relaxed max-w-xl mt-4">
+                Two products so far:{' '}
+                <a href={SWITCHBOARD_URL} target="_blank" rel="noreferrer" className={productLink}>
+                  Switchboard
+                </a>
+                , which answers every call and books the job around the clock, and{' '}
+                <a href={BLUEPRINT_URL} target="_blank" rel="noreferrer" className={productLink}>
+                  Blueprint
+                </a>
+                , a six-stage method that makes your AI plan before it builds, push back
+                on bad calls, and check security before launch.
               </motion.p>
             </div>
 
