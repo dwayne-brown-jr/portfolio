@@ -42,8 +42,9 @@ export default function About() {
             <motion.p variants={fadeUp} className="text-ink-secondary leading-relaxed">
               That builder&apos;s side has a name: <strong className="text-ink font-semibold">Handoff</strong> —
               I help owners and small teams put the right tools in place and dial them in,
-              so the repetitive work runs itself and they get their time back. Switchboard,
-              which answers every call and books the job 24/7, is its flagship product.
+              so the repetitive work runs itself and they get their time back. It has two
+              products so far: Switchboard, which answers every call and books the job
+              24/7, and Blueprint, my tested, six-stage method for building apps with AI.
             </motion.p>
           </motion.div>
 
